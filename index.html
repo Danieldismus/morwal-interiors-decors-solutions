@@ -16,8 +16,8 @@
 <body>
 	<header class="site-header" id="top">
 		<a class="brand" href="#top" aria-label="Morwal Interiors home">
-			<span class="brand-mark" aria-hidden="true"><img src="favicon.svg" alt=""></span>
-			<span class="brand-name">MORWAL <small>INTERIOR DECORS</small></span>
+			<img class="brand-logo" src="logo.svg" alt="Morwal">
+			<span class="brand-descriptor">INTERIOR DECORS<br>SOLUTIONS</span>
 		</a>
 		<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
 			<span></span><span></span>
@@ -25,8 +25,10 @@
 		<nav class="main-nav" id="main-nav" aria-label="Main navigation">
 			<a href="#services">Services</a>
 			<a href="#work">Our work</a>
+			<a href="#testimonials">Client reviews</a>
 			<a href="#about">Our approach</a>
 			<a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+			<button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
 		</nav>
 	</header>
 
@@ -43,7 +45,7 @@
 				<div class="hero-note"><span class="note-line"></span><span>Thoughtful design. Exceptional finish.</span></div>
 			</div>
 			<div class="hero-visual reveal">
-				<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=85" alt="Warm contemporary living room with layered natural textures" fetchpriority="high">
+				<img src="Photos/photo.jpeg" alt="Morwal interior design project" fetchpriority="high">
 				<div class="image-caption"><span>01 / 04</span><span>Considered living</span></div>
 				<div class="hero-stamp" role="img" aria-label="Design, plan, build, transform"><span>DESIGN · PLAN · BUILD · TRANSFORM</span><b>M</b></div>
 			</div>
@@ -87,23 +89,69 @@
 					<p>Different spaces, one shared belief: the best interiors look good and feel even better.</p>
 				</div>
 				<div class="filters reveal" role="group" aria-label="Filter projects">
-					<button class="filter-button is-active" data-filter="all" aria-pressed="true">All projects</button>
-					<button class="filter-button" data-filter="residential" aria-pressed="false">Residential</button>
-					<button class="filter-button" data-filter="commercial" aria-pressed="false">Commercial</button>
-					<button class="filter-button" data-filter="hospitality" aria-pressed="false">Hospitality</button>
+					<button class="filter-button is-active" data-filter="all" aria-pressed="true">All media</button>
+					<button class="filter-button" data-filter="photo" aria-pressed="false">Photos</button>
+					<button class="filter-button" data-filter="video" aria-pressed="false">Videos</button>
 				</div>
 				<div class="project-grid">
-					<a class="project-card project-large reveal" href="#work" data-category="residential" aria-label="View The calm collection project"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Sunlit modern home with neutral furnishings" loading="lazy"><div class="project-meta"><div><span>RESIDENTIAL</span><h3>The calm collection</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="commercial" aria-label="View Work, reimagined project"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Bright open-plan contemporary office" loading="lazy"><div class="project-meta"><div><span>COMMERCIAL</span><h3>Work, reimagined</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="hospitality" aria-label="View The welcome edit project"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Inviting boutique interior with warm wood details" loading="lazy"><div class="project-meta"><div><span>HOSPITALITY</span><h3>The welcome edit</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="residential" aria-label="View A softer kind of rest project"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Elegant bedroom in warm neutral tones" loading="lazy"><div class="project-meta"><div><span>RESIDENTIAL</span><h3>A softer kind of rest</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="commercial" aria-label="View The boutique edit project"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=85" alt="Warm, curated retail boutique with clothing displays" loading="lazy"><div class="project-meta"><div><span>RETAIL</span><h3>The boutique edit</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="commercial" aria-label="View The studio ritual project"><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1000&q=85" alt="Contemporary salon interior with elegant styling stations" loading="lazy"><div class="project-meta"><div><span>COMMERCIAL</span><h3>The studio ritual</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="hospitality" aria-label="View Gather around project"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85" alt="Atmospheric restaurant dining room with warm lighting" loading="lazy"><div class="project-meta"><div><span>HOSPITALITY</span><h3>Gather around</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
-					<a class="project-card reveal" href="#work" data-category="residential" aria-label="View Everyday, elevated project"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Modern kitchen with a warm, natural material palette" loading="lazy"><div class="project-meta"><div><span>RESIDENTIAL</span><h3>Everyday, elevated</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card project-large reveal" href="#work" data-category="photo" aria-label="View project photo 01"><img src="Photos/photo.jpeg" alt="Morwal interior project photo 01" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 01</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo" aria-label="View project photo 02"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.52%20PM%20%281%29.jpeg" alt="Morwal interior project photo 02" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 02</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo" aria-label="View project photo 03"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.52%20PM%20%283%29.jpeg" alt="Morwal interior project photo 03" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 03</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo" aria-label="View project photo 04"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.52%20PM%20%282%29.jpeg" alt="Morwal interior project photo 04" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 04</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo" aria-label="View project photo 05"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.52%20PM.jpeg" alt="Morwal interior project photo 05" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 05</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo" aria-label="View project photo 06"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.53%20PM%20%281%29.jpeg" alt="Morwal interior project photo 06" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 06</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.53%20PM%20%282%29.jpeg" alt="Morwal interior project photo 07" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 07</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.53%20PM%20%283%29.jpeg" alt="Morwal interior project photo 08" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 08</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.53%20PM.jpeg" alt="Morwal interior project photo 09" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 09</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.54%20PM%20%281%29.jpeg" alt="Morwal interior project photo 10" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 10</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.54%20PM%20%282%29.jpeg" alt="Morwal interior project photo 11" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 11</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.54%20PM%20%283%29.jpeg" alt="Morwal interior project photo 12" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 12</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.54%20PM.jpeg" alt="Morwal interior project photo 13" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 13</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.55%20PM%20%281%29.jpeg" alt="Morwal interior project photo 14" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 14</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.55%20PM%20%282%29.jpeg" alt="Morwal interior project photo 15" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 15</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.55%20PM%20%283%29.jpeg" alt="Morwal interior project photo 16" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 16</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.55%20PM.jpeg" alt="Morwal interior project photo 17" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 17</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.56%20PM%20%281%29.jpeg" alt="Morwal interior project photo 18" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 18</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.56%20PM%20%282%29.jpeg" alt="Morwal interior project photo 19" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 19</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.56%20PM.jpeg" alt="Morwal interior project photo 20" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 20</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.57%20PM%20%281%29.jpeg" alt="Morwal interior project photo 21" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 21</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.57%20PM%20%282%29.jpeg" alt="Morwal interior project photo 22" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 22</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.57%20PM.jpeg" alt="Morwal interior project photo 23" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 23</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.58%20PM%20%281%29.jpeg" alt="Morwal interior project photo 24" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 24</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.58%20PM.jpeg" alt="Morwal interior project photo 25" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 25</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.59%20PM%20%281%29.jpeg" alt="Morwal interior project photo 26" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 26</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="photo"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.59%20PM.jpeg" alt="Morwal interior project photo 27" loading="lazy"><div class="project-meta"><div><span>PROJECT PHOTO</span><h3>Project photo 27</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
+					<a class="project-card reveal" href="#work" data-category="video" data-media-type="video" data-media-src="Photos/WhatsApp%20Video%202026-10-30%20at%205.00.59%20PM.mp4" aria-label="Play Morwal project video"><img src="Photos/WhatsApp%20Image%202026-10-30%20at%205.00.52%20PM%20%281%29.jpeg" alt="Preview for Morwal project video" loading="lazy"><span class="video-play" aria-hidden="true">▶</span><div class="project-meta"><div><span>PROJECT VIDEO</span><h3>Project video 01</h3></div><span class="round-arrow" aria-hidden="true">↗</span></div></a>
 				</div>
 				<p class="portfolio-note">A glimpse of the possibilities. Your space will be entirely your own.</p>
 				<p class="gallery-hint">Select any project to explore it <span aria-hidden="true">↗</span></p>
+			</div>
+		</section>
+
+		<section class="testimonials section-wrap" id="testimonials">
+			<div class="section-heading reveal">
+				<div><p class="eyebrow">KIND WORDS</p><h2>Good work speaks<br><em>for itself.</em></h2></div>
+				<p>See what clients have shared about their experience with Morwal Interiors.</p>
+			</div>
+			<div class="testimonial-grid">
+				<article class="testimonial-card testimonial-rating reveal">
+					<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
+					<strong class="rating-score">5.0</strong>
+					<p>Google rating from 4 reviews</p>
+					<a class="text-link" href="https://share.google/jXkJpjpmjjiddEKMH" target="_blank" rel="noopener">Read client reviews <span aria-hidden="true">↗</span></a>
+				</article>
+				<article class="testimonial-card reveal">
+					<span class="testimonial-mark" aria-hidden="true">“</span>
+					<p class="testimonial-prompt">Every project has a story. We’d love to hear yours.</p>
+					<span class="testimonial-author">YOUR EXPERIENCE MATTERS</span>
+					<a class="text-link" href="https://share.google/jXkJpjpmjjiddEKMH" target="_blank" rel="noopener">Share a Google review <span aria-hidden="true">↗</span></a>
+				</article>
+				<article class="testimonial-card testimonial-feature reveal">
+					<p class="eyebrow">MADE FOR YOU</p>
+					<h3>Thoughtful design.<br><em>Lasting impressions.</em></h3>
+					<p>Planning a refresh or a full transformation? Let’s make a space that feels like you.</p>
+					<a class="text-link" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+				</article>
 			</div>
 		</section>
 
@@ -133,10 +181,10 @@
 	<dialog class="project-dialog" aria-label="Project image viewer">
 		<button class="dialog-close" type="button" aria-label="Close project viewer">×</button>
 		<button class="dialog-arrow dialog-prev" type="button" aria-label="Previous project">←</button>
-		<figure><img class="dialog-image" src="favicon.svg" alt=""><figcaption><span class="dialog-category"></span><h2 class="dialog-title">Project preview</h2><span class="dialog-count"></span></figcaption></figure>
+		<figure><img class="dialog-image" src="favicon.svg" alt=""><video class="dialog-video" controls playsinline hidden></video><figcaption><span class="dialog-category"></span><h2 class="dialog-title">Project preview</h2><span class="dialog-count"></span></figcaption></figure>
 		<button class="dialog-arrow dialog-next" type="button" aria-label="Next project">→</button>
 	</dialog>
 
-	<footer class="site-footer section-wrap"><a class="brand" href="#top" aria-label="Morwal Interiors home"><span class="brand-mark" aria-hidden="true"><img src="favicon.svg" alt=""></span><span class="brand-name">MORWAL <small>INTERIOR DECORS</small></span></a><p>Design · Plan · Build · Transform</p><div class="footer-legal"><a href="privacy.html">Privacy policy</a><span>© <span id="year"></span> Morwal Interior Decors Solutions</span></div></footer>
+	<footer class="site-footer section-wrap"><a class="brand" href="#top" aria-label="Morwal Interiors home"><img class="brand-logo" src="logo.svg" alt="Morwal"><span class="brand-descriptor">INTERIOR DECORS<br>SOLUTIONS</span></a><p>Design · Plan · Build · Transform</p><div class="footer-legal"><a href="privacy.html">Privacy policy</a><span>© <span id="year"></span> Morwal Interior Decors Solutions</span></div></footer>
 </body>
 </html>

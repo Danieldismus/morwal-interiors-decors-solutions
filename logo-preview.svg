@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="420" viewBox="0 0 520 420" role="img" aria-labelledby="title description">
+  <title id="title">Morwal logo concept</title>
+  <desc id="description">A simple lowercase mm monogram with MORWAL centered beneath it, without an enclosing mark or tagline.</desc>
+  <rect width="520" height="420" rx="8" fill="#fbfaf6"/>
+  <text x="260" y="248" text-anchor="middle" fill="#132124" font-family="Manrope, Arial, sans-serif" font-size="220" font-weight="400" letter-spacing="-25">mm</text>
+  <text x="221" y="302" fill="#132124" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="400">M</text>
+  <text x="242" y="302" fill="#132124" font-family="Manrope, Arial, sans-serif" font-size="11" font-weight="500" letter-spacing="4">ORWAL</text>
+</svg>

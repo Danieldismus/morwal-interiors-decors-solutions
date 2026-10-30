@@ -1,3 +1,38 @@
+const themeButtons = document.querySelectorAll('.theme-toggle');
+let savedTheme = 'light';
+try {
+  savedTheme = localStorage.getItem('morwal-theme') || 'light';
+} catch {
+  // Keep the site usable if browser storage is unavailable.
+}
+
+function setTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+  document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+  themeButtons.forEach((button) => {
+    button.setAttribute('aria-pressed', String(isDark));
+    button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    const icon = button.querySelector('.theme-icon');
+    const label = button.querySelector('.theme-label');
+    if (icon) icon.textContent = isDark ? '☀' : '☾';
+    if (label) label.textContent = isDark ? 'Light mode' : 'Dark mode';
+  });
+}
+
+setTheme(savedTheme);
+themeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    try {
+      localStorage.setItem('morwal-theme', nextTheme);
+    } catch {
+      // Theme still changes for this page view without persistent storage.
+    }
+  });
+});
+
 const menuButton = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 
@@ -18,6 +53,9 @@ mainNav?.querySelectorAll('a').forEach((link) => {
 
 const filterButtons = document.querySelectorAll('.filter-button');
 const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((card) => {
+  if (!card.dataset.category) card.dataset.category = card.dataset.mediaType || 'photo';
+});
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -36,6 +74,7 @@ filterButtons.forEach((button) => {
 
 const projectDialog = document.querySelector('.project-dialog');
 const dialogImage = document.querySelector('.dialog-image');
+const dialogVideo = document.querySelector('.dialog-video');
 const dialogTitle = document.querySelector('.dialog-title');
 const dialogCategory = document.querySelector('.dialog-category');
 const dialogCount = document.querySelector('.dialog-count');
@@ -43,12 +82,23 @@ let visibleProjects = [];
 let activeProjectIndex = 0;
 
 function renderProject(index) {
-  if (!projectDialog || !dialogImage || !dialogTitle || !dialogCategory || !dialogCount) return;
+  if (!projectDialog || !dialogImage || !dialogVideo || !dialogTitle || !dialogCategory || !dialogCount) return;
   activeProjectIndex = (index + visibleProjects.length) % visibleProjects.length;
   const card = visibleProjects[activeProjectIndex];
   const image = card.querySelector('img');
-  dialogImage.src = image.currentSrc || image.src;
-  dialogImage.alt = image.alt;
+  dialogVideo.pause();
+  const isVideo = card.dataset.mediaType === 'video';
+  dialogImage.hidden = isVideo;
+  dialogVideo.hidden = !isVideo;
+  if (isVideo) {
+    dialogVideo.src = card.dataset.mediaSrc;
+    dialogVideo.load();
+  } else {
+    dialogVideo.removeAttribute('src');
+    dialogVideo.load();
+    dialogImage.src = image.currentSrc || image.src;
+    dialogImage.alt = image.alt;
+  }
   dialogTitle.textContent = card.querySelector('h3')?.textContent || '';
   dialogCategory.textContent = card.querySelector('.project-meta div > span')?.textContent || '';
   dialogCount.textContent = `${String(activeProjectIndex + 1).padStart(2, '0')} / ${String(visibleProjects.length).padStart(2, '0')}`;
@@ -70,11 +120,21 @@ projectCards.forEach((card) => {
   });
 });
 
-document.querySelector('.dialog-close')?.addEventListener('click', () => projectDialog?.close());
+document.querySelector('.dialog-close')?.addEventListener('click', () => {
+  dialogVideo?.pause();
+  projectDialog?.close();
+});
 document.querySelector('.dialog-prev')?.addEventListener('click', () => renderProject(activeProjectIndex - 1));
 document.querySelector('.dialog-next')?.addEventListener('click', () => renderProject(activeProjectIndex + 1));
 projectDialog?.addEventListener('click', (event) => {
-  if (event.target === projectDialog) projectDialog.close();
+  if (event.target === projectDialog) {
+    dialogVideo?.pause();
+    projectDialog.close();
+  }
+});
+projectDialog?.addEventListener('close', () => {
+  dialogVideo?.pause();
+  if (dialogVideo) dialogVideo.removeAttribute('src');
 });
 projectDialog?.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') renderProject(activeProjectIndex - 1);
