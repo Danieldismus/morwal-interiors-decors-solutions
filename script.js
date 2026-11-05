@@ -288,23 +288,52 @@ const photoGroups = [
       'WhatsApp Image 2026-10-30 at 8.50.54 PM.jpeg',
     ],
   },
+  {
+    category: 'acoustic-ceiling',
+    label: 'ACOUSTIC CEILINGS',
+    title: 'Acoustic ceiling installation',
+    description: 'Ceiling treatments that bring acoustic comfort and a clean finish.',
+    folder: 'Accoustic ceiling Installation',
+    details: [
+      ['Acoustic ceiling detail', 'A close look at the ceiling treatment and finish.'],
+      ['A quieter ceiling', 'Acoustic materials help create a more comfortable room.'],
+      ['Ceiling installation', 'Careful installation brings the acoustic design together.'],
+      ['Acoustic finish', 'A considered finish for a calmer interior.'],
+      ['Ceiling in progress', 'A glimpse of the acoustic ceiling installation.'],
+      ['Sound-conscious design', 'Practical acoustic treatment, fitted with care.'],
+      ['Finished ceiling work', 'Another view of this acoustic ceiling project.'],
+    ],
+    files: [
+      'WhatsApp Image 2026-11-05 at 9.59.20 PM.jpeg',
+      'WhatsApp Image 2026-11-05 at 9.59.21 PM.jpeg',
+      'WhatsApp Image 2026-11-05 at 9.59.21 PM (1).jpeg',
+      'WhatsApp Image 2026-11-05 at 9.59.21 PM (2).jpeg',
+      'WhatsApp Image 2026-11-05 at 9.59.22 PM.jpeg',
+      'WhatsApp Image 2026-11-05 at 9.59.22 PM (1).jpeg',
+      'WhatsApp Image 2026-11-05 at 9.59.22 PM (2).jpeg',
+    ],
+  },
 ];
 
-function makeProjectCard({ src, category, label, title, description, isVideo = false }) {
+function makeProjectCard({ src, category, label, title, description, isVideo = false, mediaFolder = 'Photos', previewImage }) {
   const card = document.createElement('a');
   card.className = 'project-card reveal';
   card.href = '#work';
   card.dataset.category = category;
+  const mediaPath = `${mediaFolder}/${src.split('/').map(encodeURIComponent).join('/')}`;
+  const posterPath = previewImage || 'photo.jpeg';
   if (isVideo) {
     card.dataset.mediaType = 'video';
-    card.dataset.mediaSrc = 'Photos/' + src.split('/').map(encodeURIComponent).join('/');
+    card.dataset.mediaSrc = mediaPath;
     card.classList.add('project-video-card');
   }
   card.setAttribute('aria-label', `${title}. ${description}`);
 
   const image = document.createElement('img');
-  image.src = 'Photos/' + src.split('/').map(encodeURIComponent).join('/');
-  image.alt = `${title} by Morwal Interiors`;
+  image.src = isVideo
+    ? `Photos/${posterPath.split('/').map(encodeURIComponent).join('/')}`
+    : mediaPath;
+  image.alt = isVideo ? `Video preview: ${title}` : `${title} by Morwal Interiors`;
   image.loading = 'lazy';
   card.append(image);
 
@@ -314,6 +343,12 @@ function makeProjectCard({ src, category, label, title, description, isVideo = f
     playBadge.setAttribute('aria-hidden', 'true');
     playBadge.textContent = '▶';
     card.append(playBadge);
+  } else {
+    const image = document.createElement('img');
+    image.src = mediaPath;
+    image.alt = `${title} by Morwal Interiors`;
+    image.loading = 'lazy';
+    card.append(image);
   }
 
   const meta = document.createElement('div');
@@ -382,7 +417,6 @@ photoGroups.forEach((group) => {
 
 const videoCard = projectGrid?.querySelector('[data-media-type="video"]');
 if (videoCard) {
-  const poster = videoCard.querySelector('img')?.getAttribute('src') || 'Photos/photo.jpeg';
   const videoPath = videoCard.dataset.mediaSrc.replace(/^Photos\//, '').split('/').map(decodeURIComponent).join('/');
   videoCard.replaceWith(makeProjectCard({
     src: videoPath,
@@ -393,11 +427,30 @@ if (videoCard) {
     isVideo: true,
   }));
   const currentVideoCard = projectGrid?.querySelector('[data-media-type="video"]');
-  if (currentVideoCard) {
-    currentVideoCard.querySelector('img').src = poster;
-    projectGrid.append(currentVideoCard);
-  }
+  if (currentVideoCard) projectGrid.append(currentVideoCard);
 }
+
+[
+  ['VID-20261031-WA0005.mp4', 'Craft in motion', 'WhatsApp Image 2026-10-30 at 5.00.52 PM (2).jpeg'],
+  ['VID-20261031-WA0006.mp4', 'On-site progress', 'WhatsApp Image 2026-10-30 at 5.00.52 PM (3).jpeg'],
+  ['VID-20261031-WA0007.mp4', 'Details taking shape', 'WhatsApp Image 2026-10-30 at 5.00.52 PM.jpeg'],
+  ['VID-20261031-WA0009.mp4', 'Bringing the space together', 'WhatsApp Image 2026-10-30 at 5.00.53 PM (1).jpeg'],
+  ['VID-20261031-WA0010.mp4', 'A closer look at the finish', 'WhatsApp Image 2026-10-30 at 5.00.53 PM (2).jpeg'],
+  ['VID-20261031-WA0011.mp4', 'Made with care', 'WhatsApp Image 2026-10-30 at 5.00.53 PM (3).jpeg'],
+  ['VID-20261031-WA0012.mp4', 'Interior work in motion', 'WhatsApp Image 2026-10-30 at 5.00.53 PM.jpeg'],
+  ['VID-20261031-WA0013.mp4', 'A Morwal project', 'WhatsApp Image 2026-10-30 at 5.00.54 PM (1).jpeg'],
+].forEach(([file, title, previewImage]) => {
+  projectGrid?.append(makeProjectCard({
+    src: file,
+    mediaFolder: 'Videos',
+    category: 'video',
+    label: 'MORWAL ON SITE',
+    title,
+    description: 'A short video from a Morwal project.',
+    isVideo: true,
+    previewImage,
+  }));
+});
 
 const filterButtons = document.querySelectorAll('.filter-button');
 const projectCards = document.querySelectorAll('.project-card');
